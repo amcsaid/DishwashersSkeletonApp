@@ -49,6 +49,10 @@ class Settings(BaseSettings):
     POSTGRESQL_PORT: int
     POSTGRESQL_DATABASE: str
 
+    DATABASE_URL: str
+    SUPABASE_URL: str
+    SUPABASE_KEY: str
+
     @computed_field  # type: ignore[misc]
     @property
     def SQLALCHEMY_DATABASE_URI(self) -> PostgresDsn:
@@ -60,3 +64,5 @@ class Settings(BaseSettings):
             port=self.POSTGRESQL_PORT,
             path=self.POSTGRESQL_DATABASE,
         )
+
+
