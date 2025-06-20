@@ -1,6 +1,6 @@
 from fastapi import Depends, FastAPI
 from sqlalchemy.orm import Session
-from database import SessionLocal
+from .core.database import SessionLocal
 from pydantic import BaseModel
 
 app = FastAPI()
